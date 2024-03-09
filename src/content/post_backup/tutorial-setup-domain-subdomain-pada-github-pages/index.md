@@ -1,0 +1,30 @@
+---
+title: "Tutorial Setup Domain/Subdomain pada Github Pages"
+description: "Tutorial ini menjelaskan cara setup domain/subdomain pada Github Pages."
+publishDate: "15 September 2023"
+#updatedDate: "14 August 2023"
+#coverImage:
+#  src: "./cover.png"
+#  alt: "Astro build wallpaper"
+tags: ["domain", "subdomain", "github-pages", "dns", "cname", "github", "website-statis"]
+---
+
+## Referensi
+* [_How to Host a Site With a Subdomain on GitHub Pages_](https://sean-coughlin.medium.com/how-to-host-a-site-with-a-subdomain-on-github-pages-33202341f711)
+
+## Prasyarat
+1. Memiliki **_domain_**.
+2. Memiliki akun **_Github_**.
+  * Memiliki **_repository_** yang berisikan **website statis**.
+
+## Tutorial
+1. Login ke **_domain provider_** kalian dan tambahkan **_Host Record_**, contoh:
+
+   | _Type_    | _Host_    | _Value_           |
+      |-----------|-----------|-------------------|
+   | _CNAME_   | _notes_   | oxwazz.github.io. |
+   **Simpan**.
+2. Login **_Github_** dan masuk ke halaman pengaturan **_Github Pages_**, contoh: `https://github.com/oxwazz/notes/settings/pages`.
+3. Pada section **_Custom Domain_** masukkan _domain/subdomain_ kalian, contoh:  `notes.oxwazz.com`. **Simpan**.
+4. Tunggu proses **_DNS Check_**.
+5. Selesai.
