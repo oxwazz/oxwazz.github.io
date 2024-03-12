@@ -43,7 +43,7 @@ export default {
 					css: {
 						"--tw-prose-body": theme("colors.textColor / 1"),
 						"--tw-prose-headings": theme("colors.accent-2 / 1"),
-						"--tw-prose-links": theme("colors.textColor / 1"),
+						// "--tw-prose-links": theme("colors.textColor / 1"),
 						"--tw-prose-bold": theme("colors.textColor / 1"),
 						"--tw-prose-bullets": theme("colors.textColor / 1"),
 						"--tw-prose-quotes": theme("colors.quote / 1"),
@@ -54,9 +54,10 @@ export default {
 				},
 				DEFAULT: {
 					css: {
-						a: {
-							"@apply cactus-link no-underline": "",
-						},
+						// a: false,
+						// a: {
+						// 	"@apply cactus-link no-underline": "",
+						// },
 						strong: {
 							fontWeight: "700",
 						},

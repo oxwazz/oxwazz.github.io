@@ -1,0 +1,18 @@
+---
+type Props = {
+	id: string;
+};
+
+const props = Astro.props;
+---
+
+<h2 id={props.id} class="group flex items-center gap-2 capitalize">
+	{props.id.replaceAll("-", " ")}
+	<a href={"#" + props.id} class="inline no-underline decoration-red-900">
+		<img
+			src="/assets/icon-anchor.svg"
+			alt={props.id}
+			class="m-0 h-4 no-underline opacity-0 transition-all group-hover:opacity-20 group-hover:hover:opacity-50"
+		/>
+	</a>
+</h2>
