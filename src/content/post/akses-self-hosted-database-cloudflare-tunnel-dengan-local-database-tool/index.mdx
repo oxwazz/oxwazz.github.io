@@ -7,7 +7,10 @@ publishDate: "10 October 2023"
 #  src: "./cover.png"
 #  alt: "Astro build wallpaper"
 tags: ["cloudflare", "ssh", "tunnel", "cloudflared", 'terminal']
+
 ---
+import { Code } from 'astro:components';
+
 
 ## Referensi
 * [_Connect to SSH server with cloudflared access_](https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/use-cases/ssh/#connect-to-ssh-server-with-cloudflared-access)
@@ -16,6 +19,42 @@ tags: ["cloudflare", "ssh", "tunnel", "cloudflared", 'terminal']
 ## Prasyarat
 1. setup koneksi ssh pada Cloudflare Zero Trust (Tunnel).
 2. install [Cloudflared](https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/downloads/#linux) di local
+
+```ts title="examples/index.ts"
+for (let x in [0]) console.log(x)
+```
+
+sd
+
+```ts twoslash
+const hi = 'Hello'
+const msg = `${hi}, world`
+//    ^?
+```
+
+sd
+
+```ts twoslash
+// @errors: 2339
+const welcome = "Tudo bem gente?"
+const words = welcome.contains(" ")
+```
+
+
+
+
+{/* <Code code={`
+// @module: esnext
+// @filename: maths.ts
+export function absolute(num: number) {
+  if (num < 0) return num * -1;
+  return num;
+}
+// @filename: index.ts
+import {absolute} from "./maths"
+const value = absolute(-1)
+//    ^?
+`} lang="ts" theme="dark-plus" /> */}
 
 ## Tutorial
 1. Ambil Konfigurasi Cloudflare Tunnel.
