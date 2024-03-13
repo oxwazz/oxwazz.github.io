@@ -20,13 +20,14 @@ pre {
   padding: 12px;
 
   /* All code samples get a grey border, twoslash ones get a different color */
-  border-left: 1px solid #999;
-  border-bottom: 1px solid #999;
+  /* border-left: 1px solid #999;
+  border-bottom: 1px solid #999; */
+  border: none;
 
   margin-bottom: 3rem;
 
   /* Important to allow the code to move horizontally; */
-  overflow-x: auto;
+  overflow: auto;
   position: relative;
 }
 
@@ -57,10 +58,15 @@ pre.shiki div.line {
   min-height: 1rem;
 }
 
+pre.shiki .code-title {
+  opacity: 35%;
+}
+
 /** Don't show the language identifiers */
 pre.shiki .language-id {
-  display: none;
+  opacity: 35%;
 }
+
 
 /* Visually differentiates twoslash code samples  */
 pre.twoslash {
@@ -89,9 +95,9 @@ pre.twoslash data-lsp:hover::before {
   z-index: 100;
 }
 
-pre .code-container {
-  overflow: auto;
-}
+/* pre .code-container { */
+  /* overflow: auto; */
+/* } */
 
 /* The try button */
 pre .code-container>a {
@@ -316,4 +322,3 @@ data-lsp {
 .dark .shiki.light-plus {
   display: block;
 }
-
