@@ -178,7 +178,9 @@ const { Content } = await entry.render();
 					const button = document.querySelector(
 						".twoslash-hover.activezz:not(.twoslash-query-presisted)",
 					);
-					const tooltip = document.querySelector(".twoslash-popup-container.openzz");
+					const tooltip = document.querySelector(
+						".twoslash-hover.activezz:not(.twoslash-query-presisted) .twoslash-popup-container.openzz",
+					);
 					showTooltip2(button, tooltip);
 				});
 			},
@@ -186,7 +188,10 @@ const { Content } = await entry.render();
 				const button = document.querySelector(
 					".twoslash-hover.activezz:not(.twoslash-query-presisted)",
 				);
-				const tooltip = document.querySelector(".twoslash-popup-container.openzz");
+				const tooltip = document.querySelector(
+					".twoslash-hover.activezz:not(.twoslash-query-presisted) .twoslash-popup-container.openzz",
+				);
+				console.log(33333111, "to", { button, tooltip });
 				hideTooltip2(button, tooltip);
 
 				$(".twoslash-hover.activezz")
