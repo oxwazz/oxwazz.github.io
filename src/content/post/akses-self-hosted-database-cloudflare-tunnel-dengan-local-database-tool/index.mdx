@@ -20,6 +20,52 @@ import { Code } from 'astro:components';
 1. setup koneksi ssh pada Cloudflare Zero Trust (Tunnel).
 2. install [Cloudflared](https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/downloads/#linux) di local
 
+
+AsyncDisposableStack
+
+AsyncDisposableStack
+
+AsyncDisposableStack
+
+AsyncDisposableStack
+
+AsyncDisposableStack
+
+AsyncDisposableStack
+
+AsyncDisposableStack
+
+AsyncDisposableStack
+
+AsyncDisposableStack
+
+AsyncDisposableStack
+
+AsyncDisposableStack
+
+AsyncDisposableStack
+
+AsyncDisposableStack
+
+AsyncDisposableStack
+
+AsyncDisposableStack
+
+AsyncDisposableStack
+{/* ``` ts
+(1 + 2 + 3 + 4).toFixed(2)
+
+
+
+``` */}
+
+```ts twoslash
+(1 + 2 + 3 + 4).toFixed(2)
+
+
+
+```
+
 ```ts title="examples/index.ts"
 for (let x in [0]) console.log(x)
 ```
@@ -30,6 +76,8 @@ sd
 const hi = 'Hello'
 const msg = `${hi}, world`
 //    ^?
+
+
 ```
 
 sd
@@ -38,6 +86,23 @@ sd
 // @errors: 2339
 const welcome = "Tudo bem gente?"
 const words = welcome.contains(" ")
+```
+
+```ts twoslash
+// @errors: 2540
+console.log((1 + 2 + 3 + 4).toFixed(2))
+//                            ^|
+
+interface Todo {
+  title: string
+}
+
+const todo: Readonly<Todo> = {
+  title: 'Delete inactive users',
+//  ^?
+}
+
+todo.title = 'Hello'
 ```
 
 ## Tutorial

@@ -7,7 +7,7 @@ import prefetch from "@astrojs/prefetch";
 import remarkUnwrapImages from "remark-unwrap-images";
 // @ts-ignore:next-line
 import { remarkReadingTime } from "./src/utils/remark-reading-time.mjs";
-import shikiTwoslash from "remark-shiki-twoslash";
+import { transformerTwoslash, rendererRich } from "@shikijs/twoslash";
 
 // https://astro.build/config
 export default defineConfig({
@@ -15,32 +15,23 @@ export default defineConfig({
 	site: "https://oxwazz.com/",
 	// site: "https://astro-theme-cactus.netlify.app/",
 	markdown: {
-		remarkPlugins: [
-			remarkUnwrapImages,
-			remarkReadingTime,
-			// shikiTwoslash.default,
-			[shikiTwoslash.default, { themes: ["dark-plus", "light-plus"] }],
-			//
-		],
-		// remarkRehype: { footnoteLabelProperties: { className: [""] } },
-		// shikiConfig: {
-		// 	// theme: "dark-plus",
-		// 	transformers: [transformerTwoslash()],
-		// },
+		syntaxHighlight: "shiki",
+		remarkPlugins: [remarkUnwrapImages, remarkReadingTime],
+		remarkRehype: { footnoteLabelProperties: { className: [""] } },
+		shikiConfig: {
+			themes: {
+				light: "vitesse-light",
+				dark: "vitesse-dark",
+			},
+			transformers: [
+				transformerTwoslash({
+					renderer: rendererRich(),
+				}),
+			],
+		},
 	},
 	integrations: [
-		mdx({
-			// remarkPlugins: [
-			// 	shikiTwoslash.default,
-			// [shikiTwoslash.default, { theme: "dark-plus" }]
-			//
-			// ], // use twoslash in .mdx
-			// shikiConfig: {
-			// 	// theme: "dracula",
-			// 	// wrap: false,
-			// 	transformers: [transformerTwoslash()],
-			// },
-		}),
+		mdx(),
 		tailwind({
 			applyBaseStyles: false,
 		}),
