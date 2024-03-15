@@ -25,180 +25,65 @@ const { Content } = await entry.render();
 </PostLayout>
 
 <script type="module">
-	// import { computePosition } from "@floating-ui/dom";
 	import {
 		computePosition,
 		flip,
 		shift,
 		offset,
 		arrow,
+		autoUpdate,
 	} from "https://cdn.jsdelivr.net/npm/@floating-ui/dom@1.6.3/+esm";
 
-	const button = document.querySelector(".twoslash-hover.activezz");
-	const tooltip = document.querySelector(".twoslash-popup-container.openzz");
-	// const arrowElement = document.querySelector("#arrow");
-
-	// console.log(33333123, button);
-	// console.log(33333123, tooltip);
-
-	function update() {
+	function update(button, tooltip) {
 		computePosition(button, tooltip, {
 			placement: "bottom-start",
-			middleware: [
-				flip(),
-				shift({ padding: 10 }),
-				offset(-18),
-				// arrow({ element: arrowElement })
-			],
-		}).then(
-			({
-				x,
-				y,
-				placement,
-				// middlewareData
-			}) => {
-				const calcTop = placement.split("-")[0] === "top" ? y - 40 : y;
-				Object.assign(tooltip.style, {
-					left: `${x}px`,
-					top: `${calcTop}px`,
-				});
-				console.log(3333123, placement);
-				// Accessing the data
-				// const { x: arrowX, y: arrowY } = middlewareData.arrow;
-				// const staticSide = {
-				// 	top: "bottom",
-				// 	right: "left",
-				// 	bottom: "top",
-				// 	left: "right",
-				// }[placement.split("-")[0]];
-				// console.log(3333123, staticSide);
-
-				// Object.assign(arrowElement.style, {
-				// 	left: arrowX != null ? `${arrowX}px` : "",
-				// 	top: arrowY != null ? `${arrowY}px` : "",
-				// 	right: "",
-				// 	bottom: "",
-				// 	[staticSide]: "-4px",
-				// });
-			},
-		);
+			middleware: [flip(), shift({ padding: 10 }), offset()],
+		}).then(({ x, y, placement }) => {
+			const calcTop = placement.startsWith("top") ? y - 20 : y - 15;
+			Object.assign(tooltip.style, {
+				left: `${x}px`,
+				top: `${calcTop}px`,
+			});
+		});
 	}
 
-	function showTooltip() {
-		console.log(33333123, tooltip);
-		tooltip.style.cssText = "display:inline-flex !important";
-		update();
-	}
-
-	function hideTooltip() {
-		tooltip.style.cssText = "display:none !important";
-	}
-
-	// [
-	// 	["mouseenter", showTooltip],
-	// 	["mouseleave", hideTooltip],
-	// 	["focus", showTooltip],
-	// 	["blur", hideTooltip],
-	// ].forEach(([event, listener]) => {
-	// 	if (button == null) return;
-	// 	button.addEventListener(event, listener);
-	// });
-
-	// document.addEventListener("mouseover", (e) => {
-	// 	if (e.target.matches(".twoslash-hover")) {
-	// 		console.log(33333123, " hover");
-	// 		console.log(33333123, e.target.classList);
-	// 		if (e.target.classList != null) {
-	// 			e.target.classList.toggle("tess");
-	// 		}
-	// 		// element = e.target.children[0];
-	// 		// element.classList.add("tess2");
-	// 	}
-	// });
-
-	function update2(button, tooltip) {
-		computePosition(button, tooltip, {
-			placement: "bottom-start",
-			middleware: [
-				flip(),
-				shift({ padding: 10 }),
-				offset(-16),
-				// arrow({ element: arrowElement })
-			],
-		}).then(
-			({
-				x,
-				y,
-				placement,
-				// middlewareData
-			}) => {
-				const calcTop = placement.split("-")[0] === "top" ? y - 35 : y;
-				Object.assign(tooltip.style, {
-					left: `${x}px`,
-					top: `${calcTop}px`,
-				});
-				console.log(3333123, placement);
-				// Accessing the data
-				// const { x: arrowX, y: arrowY } = middlewareData.arrow;
-				// const staticSide = {
-				// 	top: "bottom",
-				// 	right: "left",
-				// 	bottom: "top",
-				// 	left: "right",
-				// }[placement.split("-")[0]];
-				// console.log(3333123, staticSide);
-
-				// Object.assign(arrowElement.style, {
-				// 	left: arrowX != null ? `${arrowX}px` : "",
-				// 	top: arrowY != null ? `${arrowY}px` : "",
-				// 	right: "",
-				// 	bottom: "",
-				// 	[staticSide]: "-4px",
-				// });
-			},
-		);
-	}
-
-	function showTooltip2(button, tooltip) {
-		console.log(33333123, tooltip);
-		tooltip.style.cssText = "display:inline-flex !important";
-		update2(button, tooltip);
-	}
-
-	function hideTooltip2(button, tooltip) {
-		tooltip.style.cssText = "display:none !important";
+	function showTooltip(button, tooltip) {
+		tooltip.style.cssText = `display:inline-flex !important; 
+      max-width: 100vw !important; 
+      white-space: pre-wrap !important; 
+      margin-right: 10px;`;
+		update(button, tooltip);
 	}
 
 	$(document).ready(function () {
-		$(".twoslash-hover").hover(
+		let cleanup = null;
+		$(".twoslash-hover:not(.twoslash-query-presisted)").hover(
 			function (e) {
 				$.when(
-					$(e.target).addClass("activezz").children(".twoslash-popup-container").addClass("openzz"),
-				).done(function () {
-					const button = document.querySelector(
-						".twoslash-hover.activezz:not(.twoslash-query-presisted)",
-					);
-					const tooltip = document.querySelector(
-						".twoslash-hover.activezz:not(.twoslash-query-presisted) .twoslash-popup-container.openzz",
-					);
-					showTooltip2(button, tooltip);
+					$(e.target).addClass("activezz").children(".twoslash-popup-container").addClass("openzz")
+				).done(function (e) {
+					const button = e?.prevObject?.[0];
+					const tooltip = e?.[0];
+					// Start auto updates.
+					if (button && tooltip) {
+						cleanup = autoUpdate(button, tooltip, () => showTooltip(button, tooltip));
+					}
 				});
 			},
-			function () {
-				const button = document.querySelector(
-					".twoslash-hover.activezz:not(.twoslash-query-presisted)",
-				);
-				const tooltip = document.querySelector(
-					".twoslash-hover.activezz:not(.twoslash-query-presisted) .twoslash-popup-container.openzz",
-				);
-				console.log(33333111, "to", { button, tooltip });
-				hideTooltip2(button, tooltip);
-
-				$(".twoslash-hover.activezz")
-					.removeClass("activezz")
-					.children(".twoslash-popup-container")
-					.removeClass("openzz");
-			},
+			function (e) {
+				$.when(
+					$(".twoslash-hover.activezz")
+						.removeClass("activezz")
+						.children(".twoslash-popup-container")
+						.removeClass("openzz")
+				).done(function (e) {
+					// Stop auto updates.
+					if (cleanup) {
+						cleanup();
+						cleanup = null;
+					}
+				});
+			}
 		);
 	});
 </script>

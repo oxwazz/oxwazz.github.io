@@ -39,23 +39,51 @@
   html.dark {
     scrollbar-color: #1f1f1f #2f2f2f;
   }
+
+  html {
+    overflow-x: hidden;
+  }
+  
+  body {
+    overflow-x: hidden;
+    position:relative;
+  }
 }
 
+/* fix: jumpy popup */
 .twoslash-popup-container {
   position: absolute !important;
-  display: none !important;
+  top: 0;
+  left: 0;
 }
 
 .twoslash-hover {
   position: static !important;
 }
 
+/* use default value for persisted popup */
 .twoslash-hover.twoslash-query-presisted .twoslash-popup-container{
   display: inline-flex !important;
 }
-
 .twoslash-hover.twoslash-query-presisted {
   position: relative !important;
+}
+
+/* fix striped border */
+.twoslash-popup-code,
+.twoslash-popup-docs {
+  border-radius: inherit;
+}
+
+/* fix doctags not fully width */
+.twoslash-popup-docs {
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+}
+
+/* fix doctags not fully width */
+.twoslash-popup-docs .twoslash-popup-docs-tags {
+  margin-right: 0;
 }
 
 html.dark pre.astro-code, 
