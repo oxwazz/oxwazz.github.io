@@ -5,7 +5,7 @@ const year = new Date().getFullYear();
 ---
 
 <footer
-	class="mt-auto flex w-full flex-col items-center justify-center gap-y-2 pb-4 pt-20 text-center align-top text-gray-500 sm:flex-row sm:justify-between sm:text-xs"
+	class="mt-auto flex w-full max-w-2xl flex-col items-center justify-center gap-y-2 pb-4 pt-20 text-center align-top text-gray-500 sm:flex-row sm:justify-between sm:text-xs"
 >
 	<div class="me-0 sm:me-4">
 		Copyright &copy; {year}{" "}
@@ -19,15 +19,23 @@ const year = new Date().getFullYear();
 			menuLinks.map((link) => (
 				<a
 					href={link.path}
-					class="px-4 py-2 sm:px-2 sm:py-0 sm:hover:text-textColor sm:hover:underline whitespace-nowrap"
+					class="whitespace-nowrap px-4 py-2 sm:px-2 sm:py-0 sm:hover:text-textColor sm:hover:underline"
 				>
 					{link.title}
-          {link.path?.startsWith('http')
-            ? <svg width="12" height="12" aria-hidden="true" viewBox="0 0 24 24" class="inline-block ml-1.5 -mt-0.5">
-                <path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path>
-              </svg>
-            : null
-          }
+					{link.path?.startsWith("http") ? (
+						<svg
+							width="12"
+							height="12"
+							aria-hidden="true"
+							viewBox="0 0 24 24"
+							class="-mt-0.5 ml-1.5 inline-block"
+						>
+							<path
+								fill="currentColor"
+								d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"
+							/>
+						</svg>
+					) : null}
 				</a>
 			))
 		}

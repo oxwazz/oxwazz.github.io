@@ -30,7 +30,7 @@
 	}
 
 	html body {
-		@apply mx-auto flex min-h-screen max-w-3xl flex-col bg-bgColor px-8 pt-16 font-sans text-sm font-normal text-textColor antialiased;
+		@apply flex min-h-screen max-w-3xl flex-col bg-bgColor px-8 pt-4 font-sans text-sm font-normal text-textColor antialiased items-center min-w-full;
 	}
 
   html {
@@ -48,6 +48,16 @@
     overflow-x: hidden;
     position:relative;
   }
+
+  .cactus-link {
+    text-decoration: none;
+    border-bottom: 1px solid rgba(125, 125, 125, 0.3);
+    transition: border-bottom 0.3s;
+  }
+  .cactus-link:hover {
+    border-bottom: 1px solid rgba(125, 125, 125, 1);
+  }
+
 }
 
 /* fix: jumpy popup */
@@ -90,7 +100,7 @@ html pre.astro-code {
   background-color: #f8f8f8 !important;
 }
 
-html.dark pre.astro-code, 
+html.dark pre.astro-code,
 html.dark pre.astro-code *:not(.twoslash-error-line):not(.twoslash-completions-unmatched) {
   color: var(--shiki-dark) !important;
   background-color: var(--shiki-dark-bg) !important;
