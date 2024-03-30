@@ -15,6 +15,7 @@ const postDate = post.data.updatedDate ?? post.data.publishDate;
 <FormattedDate date={postDate} class="min-w-[120px] text-gray-500" />
 <Tag>
 	<a href={`/posts/${post.slug}/`} class="cactus-link" rel="prefetch">
+		<span class="text-red-500">{post.data.draft ? "[Draft] " : ""}</span>
 		{post.data.title}
 	</a>
 </Tag>

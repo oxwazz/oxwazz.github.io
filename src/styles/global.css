@@ -17,7 +17,7 @@
 
 	:root.dark {
 		color-scheme: dark;
-		--theme-bg: 210deg 6% 12%;
+		--theme-bg: 210deg 6% 7%;
 		--theme-link: 330deg 49% 67%;
 		--theme-text: 220deg 3% 79%;
 		--theme-accent: 159deg 64% 45%;
@@ -57,55 +57,4 @@
   .cactus-link:hover {
     border-bottom: 1px solid rgba(125, 125, 125, 1);
   }
-
-}
-
-/* fix: jumpy popup */
-.twoslash-popup-container {
-  position: absolute !important;
-  top: 0;
-  left: 0;
-}
-
-.twoslash-hover {
-  position: static !important;
-}
-
-/* use default value for persisted popup */
-.twoslash-hover.twoslash-query-presisted .twoslash-popup-container{
-  display: inline-flex !important;
-}
-.twoslash-hover.twoslash-query-presisted {
-  position: relative !important;
-}
-
-/* fix striped border */
-.twoslash-popup-code,
-.twoslash-popup-docs {
-  border-radius: inherit;
-}
-
-/* fix doctags not fully width */
-.twoslash-popup-docs {
-  border-top-right-radius: 0;
-  border-top-left-radius: 0;
-}
-
-/* fix doctags not fully width */
-.twoslash-popup-docs .twoslash-popup-docs-tags {
-  margin-right: 0;
-}
-
-html pre.astro-code {
-  background-color: #f8f8f8 !important;
-}
-
-html.dark pre.astro-code,
-html.dark pre.astro-code *:not(.twoslash-error-line):not(.twoslash-completions-unmatched) {
-  color: var(--shiki-dark) !important;
-  background-color: var(--shiki-dark-bg) !important;
-  /* Optional, if you also want font styles */
-  font-style: var(--shiki-dark-font-style) !important;
-  font-weight: var(--shiki-dark-font-weight) !important;
-  text-decoration: var(--shiki-dark-text-decoration) !important;
 }

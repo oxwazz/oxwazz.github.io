@@ -8,7 +8,7 @@ const props = Astro.props;
 
 <h2 id={props.id} class="group flex items-center gap-2 capitalize">
 	{props.id.replaceAll("-", " ")}
-	<a href={"#" + props.id} class="inline no-underline decoration-red-900">
+	<a href={"#" + props.id} class="no-cactus-link inline no-underline decoration-red-900">
 		<img
 			src="/assets/icon-anchor.svg"
 			alt={props.id}
