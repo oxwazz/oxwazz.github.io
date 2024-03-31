@@ -3,9 +3,9 @@ title: "Akses SSH Cloudflare Tunnel dengan Local Terminal"
 description: "Menjelaskan cara akses SSH Cloudflare Tunnel dengan Local Terminal."
 publishDate: "10 October 2023"
 #updatedDate: "14 August 2023"
-#coverImage:
-#  src: "./cover.png"
-#  alt: "Astro build wallpaper"
+coverImage:
+  src: "./cover.png"
+  alt: "Astro build wallpaper"
 tags: ["cloudflare", "ssh", "tunnel", "cloudflared", 'terminal']
 
 ---
@@ -21,138 +21,103 @@ import { Code } from 'astro:components';
 2. install [Cloudflared](https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/downloads/#linux) di local
 
 
-[//]: # (AsyncDisposableStack)
+AsyncDisposableStack
 
-[//]: # ()
-[//]: # (AsyncDisposableStack)
 
-[//]: # ()
-[//]: # (AsyncDisposableStack)
+AsyncDisposableStack
 
-[//]: # ()
-[//]: # (AsyncDisposableStack)
 
-[//]: # ()
-[//]: # (AsyncDisposableStack)
+AsyncDisposableStack
 
-[//]: # ()
-[//]: # (AsyncDisposableStack)
 
-[//]: # ()
-[//]: # (AsyncDisposableStack)
+AsyncDisposableStack
 
-[//]: # ()
-[//]: # (AsyncDisposableStack)
 
-[//]: # ()
-[//]: # (AsyncDisposableStack)
+AsyncDisposableStack
 
-[//]: # ()
-[//]: # (AsyncDisposableStack)
 
-[//]: # ()
-[//]: # (AsyncDisposableStack)
+AsyncDisposableStack
 
-[//]: # ()
-[//]: # (AsyncDisposableStack)
 
-[//]: # ()
-[//]: # (AsyncDisposableStack)
+AsyncDisposableStack
 
-[//]: # ()
-[//]: # (AsyncDisposableStack)
 
-[//]: # ()
-[//]: # (AsyncDisposableStack)
+AsyncDisposableStack
 
-[//]: # ()
-[//]: # (AsyncDisposableStack)
 
-[//]: # ({/* ``` ts)
+AsyncDisposableStack
 
-[//]: # (&#40;1 + 2 + 3 + 4&#41;.toFixed&#40;2&#41;)
 
-[//]: # ()
-[//]: # ()
-[//]: # ()
-[//]: # (``` */})
+AsyncDisposableStack
 
-[//]: # ()
-[//]: # (```ts twoslash)
 
-[//]: # (&#40;1 + 2 + 3 + 4&#41;.toFixed&#40;2&#41;)
+AsyncDisposableStack
 
-[//]: # ()
-[//]: # ()
-[//]: # ()
-[//]: # (```)
 
-[//]: # ()
-[//]: # (```ts title="examples/index.ts")
+AsyncDisposableStack
 
-[//]: # (for &#40;let x in [0]&#41; console.log&#40;x&#41;)
 
-[//]: # (```)
+AsyncDisposableStack
 
-[//]: # ()
-[//]: # (sd)
 
-[//]: # ()
-[//]: # (```ts twoslash)
+AsyncDisposableStack
 
-[//]: # (const hi = 'Hello')
 
-[//]: # (const msg = `${hi}, world`)
+AsyncDisposableStack
 
-[//]: # (//    ^?)
 
-[//]: # ()
-[//]: # ()
-[//]: # (```)
+AsyncDisposableStack
 
-[//]: # ()
-[//]: # (sd)
+``` ts
+(1 + 2 + 3 + 4).toFixed(2)
+```
 
-[//]: # ()
-[//]: # (```ts twoslash)
 
-[//]: # (// @errors: 2339)
+```ts twoslash
+(1 + 2 + 3 + 4).toFixed(2)
+```
 
-[//]: # (const welcome = "Tudo bem gente?")
 
-[//]: # (const words = welcome.contains&#40;" "&#41;)
+```ts title="examples/index.ts"
+for (let x in [0]) console.log(x)
+```
 
-[//]: # (```)
 
-[//]: # ()
-[//]: # (```ts twoslash)
 
-[//]: # (// @errors: 2540)
+```ts twoslash
+const hi = 'Hello'
+const msg = `${hi}, world`
+//    ^?
 
-[//]: # (console.log&#40;&#40;1 + 2 + 3 + 4&#41;.toFixed&#40;2&#41;&#41;)
 
-[//]: # (//                            ^|)
+```
 
-[//]: # ()
-[//]: # (interface Todo {)
 
-[//]: # (  title: string)
 
-[//]: # (})
 
-[//]: # ()
-[//]: # (const todo: Readonly<Todo> = {)
+```ts twoslash
+// @errors: 2339
+const welcome = "Tudo bem gente?"
+const words = welcome.contains(" ")
+```
 
-[//]: # (  title: 'Delete inactive users',)
 
-[//]: # (//  ^?)
+```ts twoslash
+// @errors: 2540
+console.log((1 + 2 + 3 + 4).toFixed(2))
+//                            ^|
 
-[//]: # (})
+interface Todo {
+  title: string
+}
 
-[//]: # ()
-[//]: # (todo.title = 'Hello')
+const todo: Readonly<Todo> = {
+  title: 'Delete inactive users',
+//  ^?
+}
 
-[//]: # (```)
+todo.title = 'Hello'
+```
 
 ## Tutorial
 1. Ambil Konfigurasi Cloudflare Tunnel.

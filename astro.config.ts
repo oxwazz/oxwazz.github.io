@@ -13,7 +13,6 @@ import { transformerTwoslash, rendererRich } from "@shikijs/twoslash";
 export default defineConfig({
 	// ! Please remember to replace the following site property with your own domain
 	site: "https://oxwazz.com/",
-	// site: "https://astro-theme-cactus.netlify.app/",
 	markdown: {
 		syntaxHighlight: "shiki",
 		remarkPlugins: [remarkUnwrapImages, remarkReadingTime],
