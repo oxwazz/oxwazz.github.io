@@ -8,8 +8,8 @@
 		color-scheme: light;
 		/* https://tailwindcss.com/docs/customizing-colors#using-css-variables */
 		--theme-bg: 100deg 100% 100%;
-		--theme-link: 172deg 18% 41%;
-		--theme-text: 0deg 0% 0%;
+		--theme-link: 0deg 0% 0%;
+		--theme-text: 0deg 0% 33%;
 		--theme-accent: 351deg 66% 48%;
 		--theme-accent-2: 0deg 0% 7%;
 		--theme-quote: 351deg 66% 48%;
@@ -18,8 +18,8 @@
 	:root.dark {
 		color-scheme: dark;
 		--theme-bg: 210deg 6% 7%;
-		--theme-link: 330deg 49% 67%;
-		--theme-text: 220deg 3% 79%;
+		--theme-link: 0deg 0% 100%;
+		--theme-text: 0deg 0% 73%;
 		--theme-accent: 159deg 64% 45%;
 		--theme-accent-2: 0deg 0% 93%;
 		--theme-quote: 102deg 100% 86%;
@@ -33,13 +33,6 @@
 		@apply flex min-h-screen max-w-3xl flex-col bg-bgColor px-8 pt-4 font-sans text-sm font-normal text-textColor antialiased items-center min-w-full;
 	}
 
-  html {
-    scrollbar-color: rgb(238, 238, 238)  #FFFFFF;
-  }
-  html.dark {
-    scrollbar-color: #1f1f1f #2f2f2f;
-  }
-
   /* force overflow-x: hidden; */
   html {
     overflow-x: hidden;
@@ -49,12 +42,11 @@
     position:relative;
   }
 
-  .cactus-link {
-    text-decoration: none;
-    border-bottom: 1px solid rgba(125, 125, 125, 0.3);
-    transition: border-bottom 0.3s;
+  /** scrollbar styles*/
+  html {
+    scrollbar-color: rgb(238, 238, 238)  #FFFFFF;
   }
-  .cactus-link:hover {
-    border-bottom: 1px solid rgba(125, 125, 125, 1);
+  html.dark {
+    scrollbar-color: #1f1f1f #2f2f2f;
   }
 }

@@ -86,7 +86,7 @@ export default {
 						sup: {
 							"@apply ms-0.5": "",
 							a: {
-								"@apply bg-none": "",
+								"@apply bg-none transition-all": "",
 								"&:hover": {
 									"@apply text-link no-underline bg-none": "",
 								},
@@ -116,6 +116,12 @@ export default {
 		require("@tailwindcss/aspect-ratio"),
 		plugin(function ({ addComponents }) {
 			addComponents({
+				".cactus-link": {
+					"@apply text-link no-underline transition-all duration-300 border-b border-link/20": {},
+					"&:hover": {
+						"@apply border-link/100": {},
+					},
+				},
 				".title": {
 					"@apply text-2xl font-semibold text-accent-2": {},
 				},
