@@ -58,7 +58,7 @@ export default {
 							"@apply cactus-link": "",
 						},
 						strong: {
-							fontWeight: "700",
+							"@apply text-link font-bold": "",
 						},
 						code: {
 							border: "1px dotted #666",
