@@ -117,7 +117,7 @@ export default {
 		plugin(function ({ addComponents }) {
 			addComponents({
 				".cactus-link": {
-					"@apply text-link no-underline transition-all duration-300 border-b border-link/20": {},
+					"@apply text-link no-underline transition-all duration-300 border-b border-link/10": {},
 					"&:hover": {
 						"@apply border-link/100": {},
 					},
