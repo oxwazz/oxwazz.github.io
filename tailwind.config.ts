@@ -122,6 +122,13 @@ export default {
 						"@apply border-link/100": {},
 					},
 				},
+				".footer-link": {
+					"@apply text-textColor/50 no-underline transition-all duration-300 border-b border-textColor/10":
+						{},
+					"&:hover": {
+						"@apply border-textColor/50": {},
+					},
+				},
 				".title": {
 					"@apply text-2xl font-semibold text-accent-2": {},
 				},
