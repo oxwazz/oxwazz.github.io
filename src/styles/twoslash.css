@@ -45,9 +45,13 @@ html.dark pre.astro-code *:not(.twoslash-error-line):not(.twoslash-completions-u
 }
 
 /** override background-color */
-html pre.astro-code {
+html pre.astro-code,
+html pre.astro-code *:not(.twoslash-error-line):not(.twoslash-completions-unmatched)
+{
   background-color: #f8f8f8 !important;
 }
-html.dark pre.astro-code {
+html.dark pre.astro-code,
+html.dark pre.astro-code *:not(.twoslash-error-line):not(.twoslash-completions-unmatched)
+{
   background-color: #0b0c0e !important;
 }
