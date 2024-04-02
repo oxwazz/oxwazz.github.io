@@ -1,6 +1,6 @@
 ---
 type Props = {
-	id: string;
+	id?: string;
 };
 
 const props = Astro.props;
@@ -10,7 +10,7 @@ const props = Astro.props;
 	{props.id.replaceAll("-", " ")}
 	<a href={"#" + props.id} class="no-cactus-link inline no-underline">
 		<svg
-			class="text-link m-0 h-4 no-underline opacity-0 transition-all group-hover:opacity-20 group-hover:hover:opacity-50"
+			class="m-0 h-4 text-link no-underline opacity-0 transition-all group-hover:opacity-20 group-hover:hover:opacity-50"
 			stroke="currentColor"
 			fill="currentColor"
 			stroke-width="0"
