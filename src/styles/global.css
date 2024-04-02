@@ -18,7 +18,7 @@
 
 	:root.dark {
 		color-scheme: dark;
-		--theme-bg: 210deg 6% 7%;
+		--theme-bg: 0deg 0% 0%;
 		--theme-link: 0deg 0% 100%;
 		--theme-text: 0deg 0% 73%;
 		--theme-accent: 0deg 0% 93%;
