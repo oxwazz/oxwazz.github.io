@@ -12,6 +12,7 @@
 		--theme-text: 0deg 0% 33%;
 		--theme-accent: 0deg 0% 7%;
 		--theme-accent-2: 0deg 0% 7%;
+		--theme-accent-3: 21.9deg 100% 50%;
 		--theme-quote: 351deg 66% 48%;
 	}
 
@@ -22,6 +23,7 @@
 		--theme-text: 0deg 0% 73%;
 		--theme-accent: 0deg 0% 93%;
 		--theme-accent-2: 0deg 0% 93%;
+		--theme-accent-3: 21.9deg 100% 50%;
 		--theme-quote: 102deg 100% 86%;
 	}
 
