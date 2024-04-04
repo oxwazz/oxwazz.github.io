@@ -51,4 +51,13 @@
   html.dark {
     scrollbar-color: #1f1f1f #2f2f2f;
   }
+
+  /** change text selection background color */
+  *::-moz-selection { /* Code for Firefox */
+    @apply bg-textColor/20;
+  }
+
+  *::selection {
+    @apply bg-textColor/20;
+  }
 }

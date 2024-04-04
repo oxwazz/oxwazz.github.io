@@ -53,5 +53,5 @@ html pre.astro-code *:not(.twoslash-error-line):not(.twoslash-completions-unmatc
 html.dark pre.astro-code,
 html.dark pre.astro-code *:not(.twoslash-error-line):not(.twoslash-completions-unmatched)
 {
-  background-color: #0e0e0e !important;
+  background-color: #131313 !important;
 }
