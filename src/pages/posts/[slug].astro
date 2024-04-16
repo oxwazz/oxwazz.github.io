@@ -8,7 +8,6 @@ import Image from "@/components/custom-mdx/Image";
 
 export const getStaticPaths = (async () => {
 	const blogEntries = await getAllPosts();
-	console.log(333333123, blogEntries);
 	return blogEntries.map((entry) => ({
 		params: { slug: entry.slug },
 		props: { entry },
