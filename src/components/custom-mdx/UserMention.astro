@@ -1,0 +1,15 @@
+---
+type Props = {
+	name: string;
+};
+
+const props = Astro.props;
+---
+
+<span>{props.name}</span>
+
+<style>
+	span {
+		color: red;
+	}
+</style>

@@ -1,0 +1,25 @@
+---
+type Props = {
+	src: {
+		src: String;
+		width: Number;
+		height: Number;
+		format: String;
+	};
+	alt: String;
+	title?: String;
+};
+
+const props = Astro.props;
+---
+
+{
+	props.title ? (
+		<figure>
+			<img src={props.src.src} alt={props.alt} />
+			<figcaption class="text-center">{props.title}</figcaption>
+		</figure>
+	) : (
+		<img src={props.src.src} alt={props.alt} />
+	)
+}
