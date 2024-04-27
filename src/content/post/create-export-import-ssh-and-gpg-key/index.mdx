@@ -55,6 +55,11 @@ tags: ["create ssh gpg", "export ssh gpg", "import ssh gpg", "backup ssh gpg"]
         User git
         IdentityFile ~/.ssh/id_ed25519
     ```
+2. Test the ssh connection.
+    ```bash
+    ssh -T git@github.com
+    # Hi johndoe! You've successfully authenticated, but GitHub does not provide shell access.
+    ```
 
 ## GPG Key
 
