@@ -56,6 +56,12 @@ html.dark pre.astro-code *:not(.twoslash-error-line):not(.twoslash-completions-u
   background-color: #131313 !important;
 }
 
+/** override font */
 html pre.astro-code {
   @apply font-code;
+}
+
+/** override margin */
+html pre.astro-code {
+  @apply mt-2.5 mb-3.5;
 }

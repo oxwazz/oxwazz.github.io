@@ -2,8 +2,11 @@
 import type { GetStaticPaths, InferGetStaticPropsType } from "astro";
 import PostLayout from "@/layouts/BlogPost";
 import { getAllPostsPersonal } from "@/utils";
-import Heading from "@/components/custom-mdx/Heading";
-import Table from "@/components/custom-mdx/Table";
+import Heading2 from "@/components/custom-mdx/Heading-2";
+import Heading3 from "@/components/custom-mdx/Heading-3";
+import Heading4 from "@/components/custom-mdx/Heading-4";
+import Heading5 from "@/components/custom-mdx/Heading-5";
+import Heading6 from "@/components/custom-mdx/Heading-6";
 import Image from "@/components/custom-mdx/Image";
 
 export const getStaticPaths = (async () => {
@@ -25,7 +28,11 @@ const { Content } = await entry.render();
 <PostLayout post={entry}>
 	<Content
 		components={{
-			h2: Heading,
+			h2: Heading2,
+			h3: Heading3,
+			h4: Heading4,
+			h5: Heading5,
+			h6: Heading6,
 			img: Image,
 		}}
 	/>

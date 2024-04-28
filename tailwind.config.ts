@@ -1,6 +1,7 @@
 import type { Config } from "tailwindcss";
 import { fontFamily } from "tailwindcss/defaultTheme";
 import plugin from "tailwindcss/plugin";
+import type { PluginAPI } from "tailwindcss/types/config";
 
 export default {
 	content: ["./src/**/*.{astro,html,js,jsx,md,svelte,ts,tsx,vue}"],
@@ -37,10 +38,7 @@ export default {
 			transitionProperty: {
 				height: "height",
 			},
-			// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-			// @ts-ignore
-			// Remove above once tailwindcss exposes theme type
-			typography: (theme) => ({
+			typography: (theme: PluginAPI["theme"]) => ({
 				cactus: {
 					css: {
 						"--tw-prose-body": theme("colors.textColor / 1"),
@@ -100,12 +98,31 @@ export default {
 								},
 							},
 						},
+						/** fix checkbox list style */
+						'ul > li:has(input[type="checkbox"])': {
+							listStyle: "none",
+						},
+						'ul > li > input[type="checkbox"]:first-child': {
+							margin: "0 8px 0 -22px !important",
+						},
+						"ul ul": {
+							margin: "0 !important",
+						},
+						"ol ol": {
+							margin: "0 !important",
+						},
+						"li ol": {
+							margin: "0 !important",
+						},
+						"ol li": {
+							margin: "0 !important",
+						},
 					},
 				},
 				sm: {
 					css: {
 						code: {
-							fontSize: theme("fontSize.sm")[0],
+							fontSize: theme("fontSize.sm")?.[0],
 							fontWeight: "400",
 						},
 					},
