@@ -34,6 +34,7 @@
   margin-right: 0;
 }
 
+/** override background-color */
 html.dark pre.astro-code,
 html.dark pre.astro-code *:not(.twoslash-error-line):not(.twoslash-completions-unmatched) {
   color: var(--shiki-dark) !important;
@@ -44,7 +45,6 @@ html.dark pre.astro-code *:not(.twoslash-error-line):not(.twoslash-completions-u
   text-decoration: var(--shiki-dark-text-decoration) !important;
 }
 
-/** override background-color */
 html pre.astro-code,
 html pre.astro-code *:not(.twoslash-error-line):not(.twoslash-completions-unmatched)
 {
@@ -64,4 +64,30 @@ html pre.astro-code {
 /** override margin */
 html pre.astro-code {
   @apply mt-2.5 mb-3.5;
+}
+
+/** add highlight style */
+html pre.astro-code {
+  @apply block px-0 py-5;
+}
+html pre.astro-code span.line:has(> *)  {
+  @apply px-5;
+  display: inline-block;
+}
+
+html pre.astro-code span.line.highlighted  {
+  @apply px-5;
+  display: inline-block;
+  width: 100%;
+}
+html pre.astro-code span.line.highlighted,
+html pre.astro-code code span.line.highlighted span,
+html pre.astro-code code span.line.highlighted span.twoslash-popup-container * {
+  background: #eaeaea !important;
+}
+
+html.dark pre.astro-code span.line.highlighted,
+html.dark pre.astro-code code span.line.highlighted span,
+html.dark pre.astro-code code span.line.highlighted span.twoslash-popup-container * {
+  background: #1f1f1f !important;
 }
