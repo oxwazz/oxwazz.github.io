@@ -55,3 +55,7 @@ html.dark pre.astro-code *:not(.twoslash-error-line):not(.twoslash-completions-u
 {
   background-color: #131313 !important;
 }
+
+html pre.astro-code {
+  @apply font-code;
+}

@@ -32,6 +32,7 @@ export default {
 				// Add any custom fonts here
 				sans: ["Inter", ...fontFamily.sans],
 				serif: [...fontFamily.serif],
+				code: ["JetBrains Mono", ...fontFamily.mono],
 			},
 			transitionProperty: {
 				height: "height",
