@@ -4,10 +4,9 @@ type Props = {
 };
 
 const props = Astro.props;
-console.log(3333123, props);
 ---
 
-<h3 id={props.id} class="group mt-0 flex items-center gap-2 text-lg capitalize">
+<h1 id={props.id} class="group mt-0 flex items-center gap-2 text-2xl capitalize">
 	<slot />
 	<a href={"#" + props.id} class="no-cactus-link inline no-underline">
 		<svg
@@ -25,4 +24,4 @@ console.log(3333123, props);
 			></path>
 		</svg>
 	</a>
-</h3>
+</h1>

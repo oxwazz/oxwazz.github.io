@@ -6,8 +6,8 @@ type Props = {
 const props = Astro.props;
 ---
 
-<h6 id={props.id} class="group flex items-center gap-2 capitalize">
-	{props.id.replaceAll("-", " ")}
+<h6 id={props.id} class="group mt-0 flex items-center gap-2 text-xs capitalize">
+	<slot />
 	<a href={"#" + props.id} class="no-cactus-link inline no-underline">
 		<svg
 			class="m-0 h-4 text-link no-underline opacity-0 transition-all group-hover:opacity-20 group-hover:hover:opacity-50"

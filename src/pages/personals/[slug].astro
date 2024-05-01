@@ -2,6 +2,7 @@
 import type { GetStaticPaths, InferGetStaticPropsType } from "astro";
 import PostLayout from "@/layouts/BlogPost";
 import { getAllPostsPersonal } from "@/utils";
+import Heading1 from "@/components/custom-mdx/Heading-1";
 import Heading2 from "@/components/custom-mdx/Heading-2";
 import Heading3 from "@/components/custom-mdx/Heading-3";
 import Heading4 from "@/components/custom-mdx/Heading-4";
@@ -28,6 +29,7 @@ const { Content } = await entry.render();
 <PostLayout post={entry}>
 	<Content
 		components={{
+			h1: Heading1,
 			h2: Heading2,
 			h3: Heading3,
 			h4: Heading4,

@@ -105,6 +105,10 @@ export default {
 						'ul > li > input[type="checkbox"]:first-child': {
 							margin: "0 8px 0 -22px !important",
 						},
+						'ul > li > input[type="checkbox"]': {
+							position: "relative",
+							top: "1px",
+						},
 						"ul ul": {
 							margin: "0 !important",
 						},
@@ -115,6 +119,12 @@ export default {
 							margin: "0 !important",
 						},
 						"ol li": {
+							margin: "0 !important",
+						},
+						"li ul": {
+							margin: "0 !important",
+						},
+						"ul li": {
 							margin: "0 !important",
 						},
 					},
