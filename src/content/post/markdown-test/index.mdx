@@ -241,6 +241,13 @@ console.log('123')
 ```
 
 ```ts
+// [!code highlight:3]
+console.log('Highlighted')
+console.log('Highlighted')
+console.log('Not highlighted')
+```
+
+```ts
 console.log('Highlighted') // [!code highlight]
 console.log('Highlighted') // [!code highlight]
 console.log('Not highlighted')
@@ -251,6 +258,38 @@ console.log('hewwo') // [!code --]
 console.log('hello') // [!code ++]
 console.log('goodbye')
 ```
+
+```ts
+// @module: esnext
+// @filename: maths.ts
+export function absolute(num: number) {
+  if (num < 0) return num * -1;
+  return num;
+}
+// @filename: index.ts
+// ---cut---
+import {absolute} from "./maths"
+const value = absolute(-1)
+//    ^?
+
+
+```
+
+```ts
+// @noErrors
+// @esModuleInterop
+console.ti
+//        ^|
+
+
+
+```
+```ts
+// @errors: 2339
+const welcome = "Tudo bem gente?"
+const words = welcome.contains(" ")
+```
+
 
 ## Images
 ### Syntax:

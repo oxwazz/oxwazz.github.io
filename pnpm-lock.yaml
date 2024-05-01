@@ -22,10 +22,13 @@ dependencies:
     version: 5.1.0(astro@4.7.0)(tailwindcss@3.4.3)
   astro:
     specifier: 4.7.0
-    version: 4.7.0(typescript@5.4.3)
+    version: 4.7.0(sass@1.76.0)(typescript@5.4.3)
   astro-icon:
     specifier: ^0.8.2
     version: 0.8.2
+  sass:
+    specifier: ^1.76.0
+    version: 1.76.0
   satori:
     specifier: 0.10.4
     version: 0.10.4
@@ -197,7 +200,7 @@ packages:
       '@astrojs/markdown-remark': 5.1.0
       '@mdx-js/mdx': 3.0.1
       acorn: 8.11.3
-      astro: 4.7.0(typescript@5.4.3)
+      astro: 4.7.0(sass@1.76.0)(typescript@5.4.3)
       es-module-lexer: 1.5.0
       estree-util-visit: 2.0.0
       github-slugger: 2.0.0
@@ -249,7 +252,7 @@ packages:
       astro: ^3.0.0 || ^4.0.0
       tailwindcss: ^3.0.24
     dependencies:
-      astro: 4.7.0(typescript@5.4.3)
+      astro: 4.7.0(sass@1.76.0)(typescript@5.4.3)
       autoprefixer: 10.4.19(postcss@8.4.38)
       postcss: 8.4.38
       postcss-load-config: 4.0.2(postcss@8.4.38)
@@ -1866,7 +1869,7 @@ packages:
       svgo: 2.8.0
     dev: false
 
-  /astro@4.7.0(typescript@5.4.3):
+  /astro@4.7.0(sass@1.76.0)(typescript@5.4.3):
     resolution: {integrity: sha512-YC24nK6/UNelVob+4RoJPDgZJdpaJarIU85D/UxCrlsYJlLqrW8hXq7A9T6BXNs+puF9pJrYlqaJNCRO+928XA==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=21.0.0, npm: '>=9.6.5', pnpm: '>=7.1.0'}
     hasBin: true
@@ -1928,7 +1931,7 @@ packages:
       tsconfck: 3.0.3(typescript@5.4.3)
       unist-util-visit: 5.0.0
       vfile: 6.0.1
-      vite: 5.2.10
+      vite: 5.2.10(sass@1.76.0)
       vitefu: 0.2.5(vite@5.2.10)
       which-pm: 2.1.1
       yargs-parser: 21.1.1
@@ -3657,6 +3660,10 @@ packages:
     resolution: {integrity: sha512-5Fytz/IraMjqpwfd34ke28PTVMjZjJG2MPn5t7OE4eUCUNf8BAa7b5WUS9/Qvr6mwOQS7Mk6vdsMno5he+T8Xw==}
     engines: {node: '>= 4'}
     dev: true
+
+  /immutable@4.3.5:
+    resolution: {integrity: sha512-8eabxkth9gZatlwl5TBuJnCsoTADlL6ftEr7A4qgdaTsPyreilDSnUk57SO+jfKcNtxPa22U5KK6DSeAYhpBJw==}
+    dev: false
 
   /import-fresh@3.3.0:
     resolution: {integrity: sha512-veYYhQa+D1QBKznvhUHxb8faxlrwUnxseDAbAp457E0wLNio2bOSKnjYDhMj+YiAq61xrMGhQk9iXVk5FzgQMw==}
@@ -5707,6 +5714,16 @@ packages:
       suf-log: 2.5.3
     dev: true
 
+  /sass@1.76.0:
+    resolution: {integrity: sha512-nc3LeqvF2FNW5xGF1zxZifdW3ffIz5aBb7I7tSvOoNu7z1RQ6pFt9MBuiPtjgaI62YWrM/txjWlOCFiGtf2xpw==}
+    engines: {node: '>=14.0.0'}
+    hasBin: true
+    dependencies:
+      chokidar: 3.6.0
+      immutable: 4.3.5
+      source-map-js: 1.2.0
+    dev: false
+
   /satori-html@0.3.2:
     resolution: {integrity: sha512-wjTh14iqADFKDK80e51/98MplTGfxz2RmIzh0GqShlf4a67+BooLywF17TvJPD6phO0Hxm7Mf1N5LtRYvdkYRA==}
     dependencies:
@@ -6555,7 +6572,7 @@ packages:
       vfile-message: 4.0.2
     dev: false
 
-  /vite@5.2.10:
+  /vite@5.2.10(sass@1.76.0):
     resolution: {integrity: sha512-PAzgUZbP7msvQvqdSD+ErD5qGnSFiGOoWmV5yAKUEI0kdhjbH6nMWVyZQC/hSc4aXwc0oJ9aEdIiF9Oje0JFCw==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
@@ -6586,6 +6603,7 @@ packages:
       esbuild: 0.20.2
       postcss: 8.4.38
       rollup: 4.13.2
+      sass: 1.76.0
     optionalDependencies:
       fsevents: 2.3.3
     dev: false
@@ -6598,7 +6616,7 @@ packages:
       vite:
         optional: true
     dependencies:
-      vite: 5.2.10
+      vite: 5.2.10(sass@1.76.0)
     dev: false
 
   /web-namespaces@2.0.1:

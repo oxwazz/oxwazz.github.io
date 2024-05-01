@@ -28,6 +28,7 @@ export default {
 				"accent-2": "hsl(var(--theme-accent-2) / <alpha-value>)",
 				quote: "hsl(var(--theme-text) / <alpha-value>)",
 				"accent-3": "hsl(var(--theme-accent-3) / <alpha-value>)",
+				"bg-code": "hsl(var(--theme-bg-code) / <alpha-value>)",
 			},
 			fontFamily: {
 				// Add any custom fonts here
@@ -48,7 +49,7 @@ export default {
 						"--tw-prose-bullets": theme("colors.textColor / 1"),
 						"--tw-prose-quotes": theme("colors.quote / 1"),
 						"--tw-prose-code": theme("colors.textColor / 1"),
-						"--tw-prose-hr": "0.5px dashed #666",
+						"--tw-prose-hr": theme("colors.textColor / 1"),
 						"--tw-prose-th-borders": "#666",
 					},
 				},
@@ -61,14 +62,25 @@ export default {
 							"@apply text-link font-bold": "",
 						},
 						code: {
-							border: "1px dotted #666",
-							borderRadius: "2px",
+							fontFamily: theme("fontFamily.code"),
+							backgroundColor: theme("colors.bg-code / 1"),
+							borderRadius: "3px",
+							border: "1px solid",
+							borderColor: theme("colors.textColor / 0.1"),
+							padding: "4px",
+							"&::before": {
+								content: "none !important",
+							},
+							"&::after": {
+								content: "none !important",
+							},
 						},
 						blockquote: {
 							borderLeftWidth: "0",
 						},
 						hr: {
-							borderTopStyle: "dashed",
+							opacity: "0.3",
+							borderTopStyle: "solid",
 						},
 						thead: {
 							borderBottomWidth: "none",

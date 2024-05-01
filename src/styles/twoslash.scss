@@ -1,0 +1,136 @@
+//override twoslash styles
+:root {
+	--twoslash-border-color: #bfbfbf;
+	--twoslash-popup-bg: #f8f8f8;
+	--shiki-bg: #f8f8f8;
+}
+
+:root.dark {
+	--twoslash-border-color: #424242;
+	--twoslash-popup-bg: #131313;
+	--shiki-bg: #131313;
+}
+
+html {
+	& pre {
+		&.astro-code {
+			@apply mb-3.5 mt-2.5 block px-0 py-5 font-code;
+			background-color: var(--shiki-bg) !important;
+
+			/* fix: jumpy popup */
+			& .twoslash-popup-container {
+				position: absolute !important;
+				top: 0;
+				left: 0;
+			}
+			& .twoslash-hover {
+				position: static !important;
+			}
+
+			/* use default value for persisted popup */
+			& .twoslash-hover {
+				&.twoslash-query-presisted {
+					position: relative !important;
+					& .twoslash-popup-container {
+						display: inline-flex !important;
+					}
+				}
+			}
+
+			/* fix striped border */
+			& .twoslash-popup-code,
+			& .twoslash-popup-docs {
+				border-radius: inherit;
+			}
+
+			/* fix doctags not fully width */
+			& .twoslash-popup-docs {
+				border-top-right-radius: 0;
+				border-top-left-radius: 0;
+			}
+
+			/* fix doctags not fully width */
+			& .twoslash-popup-docs {
+				& .twoslash-popup-docs-tags {
+					margin-right: 0;
+				}
+			}
+			& code {
+				& span {
+					&.line {
+						&:not(:last-child) {
+							/** delete no item */
+							@apply px-5;
+							display: inline-block;
+						}
+
+						/** add transformerNotationHighlight style */
+						&.highlighted {
+							@apply px-5;
+							display: inline-block;
+							width: 100%;
+							background: #eaeaea !important;
+						}
+
+						/** add transformerNotationDiff style */
+						&.diff {
+							@apply px-5;
+							display: inline-block;
+							width: 100%;
+							&.add {
+								&::before {
+									content: "+";
+									color: #18794e;
+									margin-left: -13.5px;
+									padding-right: 4px;
+								}
+								background: #d8f0e8 !important;
+							}
+							&.remove {
+								@apply px-5;
+								display: inline-block;
+								width: 100%;
+								&::before {
+									content: "-";
+									color: #b34e52;
+									margin-left: -13.5px;
+									padding-right: 4px;
+								}
+								background: #f9e7ea !important;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	&.dark {
+		& pre {
+			&.astro-code {
+				color: var(--shiki-dark) !important;
+				background-color: var(--shiki-bg) !important;
+
+				& code {
+					& span {
+						&.line {
+							/** add transformerNotationHighlight style */
+							&.highlighted {
+								background: #1f1f1f !important;
+							}
+
+							/** add transformerNotationDiff style */
+							&.diff {
+								&.add {
+									background: #17322c !important;
+								}
+								&.remove {
+									background: #301c23 !important;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
