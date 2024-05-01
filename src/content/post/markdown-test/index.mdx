@@ -1,0 +1,408 @@
+---
+title: "Markdown Test"
+description: "                                                                  "
+publishDate: "1 January 2020"
+#updatedDate: "1 January 2020"
+coverImage:
+  src: "./cover.png"
+  alt: "Astro build wallpaper"
+tags: []
+
+---
+[//]: # (ref: https://roneo.org/markdown/)
+
+## Basic formatting
+### Syntax:
+```markdown
+1. **two asterisks** or __two underscores__.
+1. *single asterisk* or a _single underscore_
+1. ***bold and italic***
+1. ~~two tildes~~
+```
+### Output:
+1. **two asterisks** or __two underscores__.
+1. *single asterisk* or a _single underscore_
+1. ***bold and italic***
+1. ~~two tildes~~
+
+
+## Blockquotes
+### Syntax:
+```markdown
+> First level
+>
+>> Second level
+
+> **Markdown** can be used *inside quotes*
+>
+> 1.   This is the first list item.
+> 1.   This is the second list item.
+>
+> ~~strikethrough~~
+>
+> Here's some example code:
+>
+>     return shell_exec("echo $input | $markdown_script");
+```
+### Output:
+> First level
+>
+>> Second level
+
+> **Markdown** can be used *inside quotes*
+>
+> 1.   This is the first list item.
+> 1.   This is the second list item.
+>
+> ~~strikethrough~~
+>
+> Here's some example code:
+>
+>     return shell_exec("echo $input | $markdown_script");
+
+## Lists
+### Syntax:
+```markdown
+- First item
+- Second item
+- Third item
+
++ First item
++ Second item
++ Third item
+
+* First item
+* Second item
+* Third item
+
+1. First item
+1. Second item
+1. Third item
+
+- First item
+- Second item
+- Third item
+    1. Indented item
+    1. Indented item
+- Fourth item
+
+1. First item
+2. Second item
+3. Third item
+```
+### Output:
+- First item
+- Second item
+- Third item
+
++ First item
++ Second item
++ Third item
+
+* First item
+* Second item
+* Third item
+
+1. First item
+1. Second item
+1. Third item
+
+- First item
+- Second item
+- Third item
+    1. Indented item
+    1. Indented item
+- Fourth item
+
+1. First item
+2. Second item
+3. Third item
+
+
+## Paragraphs & breaks
+### Syntax:
+```markdown
+This text is a paragraph.
+This won't be another paragraph, it will join the line above it.
+
+This will be another paragraph, as it has a blank line above it.
+
+This is the first line.(space)(space)
+Second line
+
+----
+
+****
+
+____
+```
+### Output:
+This text is a paragraph.
+This won't be another paragraph, it will join the line above it.
+
+This will be another paragraph, as it has a blank line above it.
+
+This is the first line.
+Second line
+
+----
+
+****
+
+____
+
+## Links
+### Syntax:
+```markdown
+[Semantic description](https://roneo.org/markdown)
+
+--
+
+[I'm a link][Reference text]
+
+[This link] will do the same as well. It works as the identifier itself.
+
+
+[reference text]: https://jamstack.club
+[this link]: https://roneo.org/markdown
+
+--
+
+[Random text][random-identifier].
+Hover the mouse over it to see the title.
+
+Several syntaxes are accepted:
+[One](https://eff.org "First site")
+[Two](https://example.com 'Second site')
+[Three](https://example.com (Third site))
+
+[random-identifier]: https://roneo.org/markdown "This example has a title"
+
+--
+
+I love supporting the **[EFF](https://eff.org)**.
+This is the *[Markdown Guide](https://www.markdownguide.org)*.
+
+--
+
+See the section on [`code`](#code).
+```
+### Output:
+[Semantic description](https://roneo.org/markdown)
+
+--
+
+[I'm a link][Reference text]
+
+[This link] will do the same as well. It works as the identifier itself.
+
+
+[reference text]: https://jamstack.club
+[this link]: https://roneo.org/markdown
+
+--
+
+[Random text][random-identifier].
+Hover the mouse over it to see the title.
+
+Several syntaxes are accepted:
+[One](https://eff.org "First site")
+[Two](https://example.com 'Second site')
+[Three](https://example.com (Third site))
+
+[random-identifier]: https://roneo.org/markdown "This example has a title"
+
+--
+
+I love supporting the **[EFF](https://eff.org)**.
+This is the *[Markdown Guide](https://www.markdownguide.org)*.
+
+--
+
+See the section on [`code`](#code).
+
+
+
+
+
+## Code formatting
+### Example:
+```
+sudo apt hello
+```
+
+```bash
+sudo apt hello
+```
+
+```ts
+// comment
+console.log('123')
+```
+
+```ts
+console.log('Highlighted') // [!code highlight]
+console.log('Highlighted') // [!code highlight]
+console.log('Not highlighted')
+```
+
+```ts
+console.log('hewwo') // [!code --]
+console.log('hello') // [!code ++]
+console.log('goodbye')
+```
+
+## Images
+### Syntax:
+```markdown
+![local image](./cover.png)
+![https image](https://placehold.co/600x400 "image with title title")
+
+-Clickable images-
+[![Semantic description](https://roneo.org/img/ok.png "Your title")](http://jamstack.club)
+
+-Image with an identifier-
+![Semantic desc.][image identifier]
+
+Lorem ipsum dolor sit amet consectetur adipisicing elit [...]
+
+[image identifier]: https://roneo.org/img/ok.png "Title"
+```
+### Output:
+![local image](./cover.png)
+![https image](https://placehold.co/600x400 "image with title title")
+
+-Clickable images-
+[![Semantic description](https://roneo.org/img/ok.png "Your title")](http://jamstack.club)
+
+-Image with an identifier-
+![Semantic desc.][image identifier]
+
+Lorem ipsum dolor sit amet consectetur adipisicing elit [...]
+
+[image identifier]: https://roneo.org/img/ok.png "Title"
+
+
+## Task list / checkboxes
+### Syntax:
+```markdown
+- [X] Write the press release
+- [ ] Update the website
+    - [X] Create a new page
+    - [ ] Update the homepage
+```
+### Output:
+- [X] Write the press release
+- [ ] Update the website
+    - [X] Create a new page
+    - [ ] Update the homepage
+
+## Tables
+### Syntax:
+```markdown
+| Syntax    | Description |
+| --------- | ----------- |
+| Header    | Title       |
+| Paragraph | Text        |
+
+-Text alignment in tables-
+| Syntax    | Description |   Test Text |
+| :-------- | :---------: | ----------: |
+| Header    |    Title    | Here's this |
+| Paragraph |    Text     |    And more |
+```
+### Output:
+| Syntax    | Description |
+| --------- | ----------- |
+| Header    | Title       |
+| Paragraph | Text        |
+
+-Text alignment in tables-
+| Syntax    | Description |   Test Text |
+| :-------- | :---------: | ----------: |
+| Header    |    Title    | Here's this |
+| Paragraph |    Text     |    And more |
+
+## Footnotes
+### Syntax:
+```markdown
+Here's a sentence with a footnote[^1].
+(see the result at the bottom of the page)
+
+[^1]: This is the first footnote.
+
+-Long footnote-
+
+Here's a longer one.[^bignote]
+(see the result at the bottom of the page)
+
+[^bignote]: Here's one with multiple paragraphs and code.
+
+	Indent paragraphs to include them in the footnote.
+
+	`{ my code }`
+
+	Note that you can place the footnote anywhere you want in your article
+```
+### Output:
+Here's a sentence with a footnote[^1].
+(see the result at the bottom of the page)
+
+[^1]: This is the first footnote.
+
+-Long footnote-
+
+Here's a longer one.[^bignote]
+(see the result at the bottom of the page)
+
+[^bignote]: Here's one with multiple paragraphs and code.
+
+	Indent paragraphs to include them in the footnote.
+
+	`{ my code }`
+
+	Note that you can place the footnote anywhere you want in your article
+
+## Definition List
+### Syntax:
+```markdown
+term
+: definition
+
+second term
+: meaning
+
+complex term
+: long definition including **bold text**. Velit tempor cillum aute culpa pariatur enim laboris consectetur tempor. Aute elit non do ipsum. Nisi quis culpa magna esse ipsum. Ad aliquip ullamco minim cillum in ullamco.
+
+```
+### Output:
+term
+: definition
+
+second term
+: meaning
+
+complex term
+: long definition including **bold text**. Velit tempor cillum aute culpa pariatur enim laboris consectetur tempor. Aute elit non do ipsum. Nisi quis culpa magna esse ipsum. Ad aliquip ullamco minim cillum in ullamco.
+
+
+## Headings
+### Syntax:
+```markdown
+# Heading 1
+## Heading 2
+### Heading 3
+#### Heading 4
+##### Heading 5
+###### Heading 6
+```
+### Output:
+# Heading 1
+## Heading 2
+### Heading 3
+#### Heading 4
+##### Heading 5
+###### Heading 6
+
+---
