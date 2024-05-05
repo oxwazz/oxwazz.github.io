@@ -25,19 +25,35 @@ const { Content } = await entry.render();
 ---
 
 <script is:inline src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+<!-- viewerjs - start -->
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/viewerjs/1.11.6/viewer.min.js"
+	integrity="sha512-EC3CQ+2OkM+ZKsM1dbFAB6OGEPKRxi6EDRnZW9ys8LghQRAq6cXPUgXCCujmDrXdodGXX9bqaaCRtwj4h4wgSQ=="
+	crossorigin="anonymous"
+	referrerpolicy="no-referrer"></script>
+<link
+	rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/imageviewer/1.1.0/viewer.min.css"
+	integrity="sha512-TzUPhuLv6gjoqejLOagZG1XHJerWp5Gbnyl/k7/yXp4Es/10AgsE2cn/SPvT6d2t0qNrGxY/W5zqoeH/JPQXFQ=="
+	crossorigin="anonymous"
+	referrerpolicy="no-referrer"
+/>
+<!-- viewerjs - end -->
 
 <PostLayout post={entry}>
-	<Content
-		components={{
-			h1: Heading1,
-			h2: Heading2,
-			h3: Heading3,
-			h4: Heading4,
-			h5: Heading5,
-			h6: Heading6,
-			img: Image,
-		}}
-	/>
+	<div id="viewerjs-images">
+		<Content
+			components={{
+				h1: Heading1,
+				h2: Heading2,
+				h3: Heading3,
+				h4: Heading4,
+				h5: Heading5,
+				h6: Heading6,
+				img: Image,
+			}}
+		/>
+	</div>
 </PostLayout>
 
 <script type="module">
@@ -49,6 +65,8 @@ const { Content } = await entry.render();
 		arrow,
 		autoUpdate,
 	} from "https://cdn.jsdelivr.net/npm/@floating-ui/dom@1.6.3/+esm";
+
+	new window.Viewer(document.getElementById("viewerjs-images"));
 
 	function update(button, tooltip) {
 		computePosition(button, tooltip, {

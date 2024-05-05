@@ -11,13 +11,12 @@ type Props = {
 };
 
 const props = Astro.props;
-console.log(33333123, props);
 ---
 
 {
 	props.title ? (
 		<figure>
-			<img src={props?.src?.src || props?.src} alt={props.alt} />
+			<img class="m-auto" src={props?.src?.src || props?.src} alt={props.alt} />
 			<figcaption class="text-center">{props.title}</figcaption>
 		</figure>
 	) : (

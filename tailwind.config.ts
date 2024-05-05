@@ -75,9 +75,6 @@ export default {
 								content: "none !important",
 							},
 						},
-						blockquote: {
-							borderLeftWidth: "0",
-						},
 						hr: {
 							opacity: "0.3",
 							borderTopStyle: "solid",
