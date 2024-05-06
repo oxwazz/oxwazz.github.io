@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer base {
 	:root {
 		color-scheme: light;
@@ -14,7 +13,7 @@
 		--theme-accent-2: 0deg 0% 7%;
 		--theme-accent-3: 21.9deg 100% 50%;
 		--theme-quote: 351deg 66% 48%;
-    --theme-bg-code: 0deg	0% 97%
+		--theme-bg-code: 0deg 0% 97%;
 	}
 
 	:root.dark {
@@ -26,7 +25,7 @@
 		--theme-accent-2: 0deg 0% 93%;
 		--theme-accent-3: 21.9deg 100% 50%;
 		--theme-quote: 102deg 100% 86%;
-    --theme-bg-code: 0deg 0% 7%
+		--theme-bg-code: 0deg 0% 7%;
 	}
 
 	html {
@@ -34,32 +33,33 @@
 	}
 
 	html body {
-		@apply flex min-h-screen max-w-3xl flex-col bg-bgColor px-8 pt-4 font-sans text-sm font-normal text-textColor antialiased items-center min-w-full;
+		@apply flex min-h-screen min-w-full max-w-3xl flex-col items-center bg-bgColor px-8 pt-4 font-sans text-sm font-normal text-textColor antialiased;
 	}
 
-  /* force overflow-x: hidden; */
-  html {
-    overflow-x: hidden;
-  }
-  body {
-    overflow-x: hidden;
-    position:relative;
-  }
+	/* force overflow-x: hidden; */
+	html {
+		/*overflow-x: hidden;*/
+	}
+	body {
+		/*overflow-x: hidden;*/
+		position: relative;
+	}
 
-  /** scrollbar styles*/
-  html {
-    scrollbar-color: rgb(238, 238, 238)  #FFFFFF;
-  }
-  html.dark {
-    scrollbar-color: #1f1f1f #2f2f2f;
-  }
+	/** scrollbar styles*/
+	html {
+		scrollbar-color: rgb(238, 238, 238) #ffffff;
+	}
+	html.dark {
+		scrollbar-color: #1f1f1f #2f2f2f;
+	}
 
-  /** change text selection background color */
-  *::-moz-selection { /* Code for Firefox */
-    @apply bg-textColor/20;
-  }
+	/** change text selection background color */
+	*::-moz-selection {
+		/* Code for Firefox */
+		@apply bg-textColor/20;
+	}
 
-  *::selection {
-    @apply bg-textColor/20;
-  }
+	*::selection {
+		@apply bg-textColor/20;
+	}
 }
