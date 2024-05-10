@@ -16,8 +16,8 @@
 		"@shikijs/transformers": "^1.5.1",
 		"@shikijs/twoslash": "^1.5.1",
 		"@tailwindcss/aspect-ratio": "^0.4.2",
-		"@tailwindcss/typography": "^0.5.12",
-		"@types/eslint": "^8.56.6",
+		"@tailwindcss/typography": "^0.5.13",
+		"@types/eslint": "^8.56.10",
 		"@typescript-eslint/eslint-plugin": "^6.21.0",
 		"@typescript-eslint/parser": "^6.21.0",
 		"astro-eslint-parser": "^0.15.0",
@@ -32,15 +32,15 @@
 		"mdast-util-to-string": "^4.0.0",
 		"pagefind": "^0.12.0",
 		"postcss": "^8.4.38",
-		"postcss-html": "^1.6.0",
+		"postcss-html": "^1.7.0",
 		"postcss-import": "^15.1.0",
 		"prettier": "^3.2.5",
 		"prettier-plugin-astro": "0.12.0",
-		"prettier-plugin-tailwindcss": "^0.5.13",
+		"prettier-plugin-tailwindcss": "^0.5.14",
 		"reading-time": "^1.5.0",
 		"remark-unwrap-images": "^3.0.1",
 		"tailwindcss": "^3.4.3",
-		"typescript": "^5.4.3"
+		"typescript": "^5.4.5"
 	},
 	"dependencies": {
 		"@astrojs/mdx": "^3.0.0",
@@ -50,7 +50,7 @@
 		"@astrojs/tailwind": "^5.1.0",
 		"astro": "4.8.2",
 		"astro-icon": "^0.8.2",
-		"sass": "^1.76.0",
+		"sass": "^1.77.0",
 		"satori": "0.10.4",
 		"satori-html": "^0.3.2",
 		"sharp": "^0.32.6"
