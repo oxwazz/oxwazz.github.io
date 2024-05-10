@@ -10,7 +10,6 @@ import { transformerTwoslash, rendererRich } from "@shikijs/twoslash";
 import { transformerNotationDiff, transformerNotationHighlight } from "@shikijs/transformers";
 
 export default defineConfig({
-	// ! Please remember to replace the following site property with your own domain
 	site: "https://oxwazz.com/",
 	markdown: {
 		syntaxHighlight: "shiki",
@@ -23,7 +22,6 @@ export default defineConfig({
 				dark: "vitesse-dark",
 			},
 			transformers: [
-				// @ts-expect-error
 				transformerTwoslash({
 					renderer: rendererRich(),
 				}),

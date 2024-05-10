@@ -28,31 +28,6 @@
 		--theme-bg-code: 0deg 0% 7%;
 	}
 
-	html {
-		@apply scroll-smooth;
-	}
-
-	html body {
-		@apply flex min-h-screen min-w-full max-w-3xl flex-col items-center bg-bgColor px-8 pt-4 font-sans text-sm font-normal text-textColor antialiased;
-	}
-
-	/* force overflow-x: hidden; */
-	html {
-		/*overflow-x: hidden;*/
-	}
-	body {
-		/*overflow-x: hidden;*/
-		position: relative;
-	}
-
-	/** scrollbar styles*/
-	html {
-		scrollbar-color: rgb(238, 238, 238) #ffffff;
-	}
-	html.dark {
-		scrollbar-color: #1f1f1f #2f2f2f;
-	}
-
 	/** change text selection background color */
 	*::-moz-selection {
 		/* Code for Firefox */
@@ -61,5 +36,21 @@
 
 	*::selection {
 		@apply bg-textColor/20;
+	}
+
+	html {
+		@apply scroll-smooth;
+
+		/** scrollbar styles */
+		scrollbar-color: rgb(238, 238, 238) #ffffff;
+
+		&.dark {
+			/** scrollbar styles */
+			scrollbar-color: #1f1f1f #2f2f2f;
+		}
+
+		& body {
+			@apply flex min-h-screen min-w-full max-w-3xl flex-col items-center bg-bgColor px-8 pt-4 font-sans text-sm font-normal text-textColor antialiased;
+		}
 	}
 }
