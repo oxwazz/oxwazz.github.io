@@ -1,0 +1,126 @@
+---
+title: "Cheatsheet Jetpack Compose"
+description: "Notes about Jetpack Compose for Android development"
+publishDate: "21 May 2024"
+tags: ["jetpack compose", "android", "cheatsheet"]
+draft: true
+---
+
+## Layout
+```kotlin
+Box()
+Column()
+Row()
+Spacer()
+
+```
+
+### Column Layout
+```kotlin
+Column(
+    modifier = Modifier.fillMaxSize(),
+    verticalArrangement = Arrangement.Center,
+    horizontalAlignment = Alignment.CenterHorizontally
+) {
+    Text("Hello, World!")
+}
+```
+
+### Row Layout
+```kotlin
+Row(
+    modifier = Modifier.fillMaxWidth(),
+    horizontalArrangement = Arrangement.SpaceEvenly,
+    verticalAlignment = Alignment.CenterVertically
+) {
+    Text("Hello, World!")
+}
+```
+
+### Box Layout
+```kotlin
+Box(
+    modifier = Modifier.fillMaxSize(),
+    contentAlignment = Alignment.Center
+) {
+    Text("Hello, World!")
+}
+```
+
+### Spacer
+```kotlin
+Spacer(modifier = Modifier.height(16.dp))
+```
+
+## Input
+```kotlin
+// Button
+Button(onClick = { /* Do something */ }) {
+    Text("Click me")
+}
+
+// TextField
+var text by remember { mutableStateOf("") }
+    TextField(
+        value = text,
+        onValueChange = { text = it },
+        singleLine = true,
+        label = { Text(stringResource(R.string.bill_amount)) },
+        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
+        modifier = modifier
+    )
+```
+
+## Image
+```kotlin
+Image(
+    painter = painterResource(R.drawable.image),
+    contentDescription = "Image",
+    modifier = Modifier.size(100.dp)
+)
+```
+
+## Resources String
+```kotlin
+// In res/values/strings.xml
+<string name="hello">Hello, World!</string>
+
+// In Composable
+Text(stringResource(R.string.hello))
+```
+
+## State
+```kotlin
+var counter by remember { mutableStateOf(0) }
+
+Button(onClick = { counter++ }) {
+    Text("Click me")
+}
+```
+
+## Data Type
+```kotlin
+String
+Int
+Float
+Double
+Boolean
+Unit
+null
+```
+
+## Data Type Conversion
+```kotlin
+val number = 10
+val text = number.toString()
+val number2 = text.toDoubleOrNull() ?: 0.0
+```
+
+### extra notes / keywords
+1. hoist state / state hoisting
+1. annotation (e.q. @Composable)
+1. trailing lambda
+1. elvis operator
+1. compose
+1. recomposition
+1. State

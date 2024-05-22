@@ -36,6 +36,10 @@ export const menuLinks: Array<{ title: string; path: string }> = [
 		title: "Blog",
 		path: "/posts/",
 	},
+	{
+		title: "Activities",
+		path: "/posts/",
+	},
 	// {
 	//   title: "Notes",
 	//   path: "https://notes.oxwazz.com",
