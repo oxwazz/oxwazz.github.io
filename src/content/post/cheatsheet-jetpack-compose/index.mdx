@@ -6,14 +6,85 @@ tags: ["jetpack compose", "android", "cheatsheet"]
 draft: true
 ---
 
-## Layout
+## Widget
 ```kotlin
-Box()
-Column()
-Row()
-Spacer()
-
+Box()       // Container
+Column()    // Vertical Layout
+Row()       // Horizontal Layout
+Spacer()    // Space
+Switch()    // Switch
+Surface()   // Surface
+TextField() // TextField
+Text()      // Text
 ```
+
+## kotlin.math
+```kotlin
+kotlin.math.abs()
+kotlin.math.max()
+kotlin.math.min()
+kotlin.math.round()
+kotlin.math.ceil()
+kotlin.math.floor()
+kotlin.math.pow()
+kotlin.math.sqrt()
+kotlin.math.cbrt()
+kotlin.math.exp()
+kotlin.math.ln()
+kotlin.math.log10()
+kotlin.math.log2()
+kotlin.math.sin()
+kotlin.math.cos()
+kotlin.math.tan()
+kotlin.math.asin()
+kotlin.math.acos()
+kotlin.math.atan()
+kotlin.math.atan2()
+kotlin.math.hypot()
+kotlin.math.sinh()
+kotlin.math.cosh()
+kotlin.math.tanh()
+kotlin.math.asinh()
+kotlin.math.acosh()
+kotlin.math.atanh()
+// etc
+```
+
+## Conditional
+```kotlin
+if (condition) {
+    // do something
+} else {
+    // do something
+}
+
+when (condition) {
+    true -> // do something
+    false -> // do something
+}
+
+val result = CustomNumber ?: 0
+```
+
+## Loop
+```kotlin
+for (i in 0..10) {
+    // do something
+}
+
+for (i in 0 until 10) {
+    // do something
+}
+
+for (i in 10 downTo 0) {
+    // do something
+}
+
+for (i in 0..10 step 2) {
+    // do something
+}
+```
+
 
 ### Column Layout
 ```kotlin
@@ -71,6 +142,19 @@ var text by remember { mutableStateOf("") }
     )
 ```
 
+## keyboardOptions
+```kotlin
+// KeyboardOptions
+TextField(
+    value = text,
+    onValueChange = { text = it },
+    keyboardOptions = KeyboardOptions.Default.copy(  // use other default options
+        keyboardType = KeyboardType.Number,          // Number, Text, Phone, Email, Password, etc
+        imeAction = ImeAction.Done                   // Done, Next, Search, Go, Send, etc
+    )
+)
+```
+
 ## Image
 ```kotlin
 Image(
@@ -112,13 +196,34 @@ null
 ## Data Type Conversion
 ```kotlin
 val number = 10
-val text = number.toString()
-val number2 = text.toDoubleOrNull() ?: 0.0
+val text = number.toString() // 10 => "10"
+val number2 = text.toDoubleOrNull() // "10" => 10.0 or null
+```
+
+## Annotation
+```kotlin
+// @Composable
+@Composable
+fun MyComposable() {
+    Text("Hello, World!")
+}
+
+// @Preview
+@Preview
+@Composable
+fun MyComposablePreview() {
+    MyComposable()
+}
+
+// @StringRes
+@StringRes
+fun getStringRes(@StringRes resId: Int): String {
+    return stringResource(resId)
+}
 ```
 
 ### extra notes / keywords
 1. hoist state / state hoisting
-1. annotation (e.q. @Composable)
 1. trailing lambda
 1. elvis operator
 1. compose
