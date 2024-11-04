@@ -10,12 +10,11 @@ const {
 } = Astro.props;
 ---
 
-<li class={`${depth > 2 ? "ms-2" : ""}`}>
+<li class={`${depth > 2 ? "ms-3" : ""}`}>
 	<a
-		class={`block line-clamp-2 hover:text-accent ${depth <= 2 ? "mt-3" : "mt-2 text-[0.6875rem]"}`}
+		class={`block line-clamp-2 hover:text-accent text-accent/45 transition-all duration-300 hover:underline underline-offset-2 ${depth <= 2 ? "mt-1.5" : "mt-1 text-[0.6875rem]"}`}
 		href={`#${slug}`}
-		aria-label={`Scroll to section: ${text}`}
-		><span class="me-0.5 opacity-10">#</span> {" "}{text}</a
+		aria-label={`Scroll to section: ${text}`}>{text}</a
 	>
 	{
 		!!subheadings.length && (
