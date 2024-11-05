@@ -49,12 +49,12 @@ const paginationProps = {
 ---
 
 <PageLayout meta={meta}>
-	<h1 class="title mb-6 flex items-center">
+	<h1 class="title mx-auto mb-6 flex max-w-screen-sm items-center">
 		<a href="/tags/" class="text-accent sm:hover:underline">Tags</a>
 		<span class="me-3 ms-2">→</span>
 		<span class="text-xl">#{tag}</span>
 	</h1>
-	<section aria-label="Blog post list">
+	<section aria-label="Blog post list" class="mx-auto max-w-screen-sm">
 		<ul class="space-y-8">
 			{
 				page.data.map((p) => (
