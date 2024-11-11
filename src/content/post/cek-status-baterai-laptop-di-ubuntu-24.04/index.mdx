@@ -1,0 +1,58 @@
+---
+title: "Cek Status Baterai Laptop di Ubuntu 24.04"
+description: "Cara ngecek status baterai laptop di ubuntu 24.04."
+publishDate: "11 November 2024"
+#updatedDate: "14 August 2023"
+coverImage:
+  src: "./cover.webp"
+  alt: "Astro build wallpaper"
+tags: ["css", "padding"]
+---
+
+## Pendahuluan
+Mungkin langsung aja karena memang caranya cukup mudah, seperti:
+
+1. kita buka terminal lalu ketikkan `upower -i` untuk ngelist semua devices yang ada pada *Upower*
+```bash
+❯ upower -i
+
+  /org/freedesktop/UPower/devices/battery_BAT1
+  /org/freedesktop/UPower/devices/line_power_ACAD
+  /org/freedesktop/UPower/devices/battery_hidpp_battery_0
+  /org/freedesktop/UPower/devices/DisplayDevice
+```
+
+1. kemudian kita cari path yang ada tulisan *BAT*, dikasus ini adalah `/org/freedesktop/UPower/devices/battery_BAT1`, setelah kita dapat path tersebut, kita ketikkan: [^link1]
+```bash
+❯ upower -i /org/freedesktop/UPower/devices/battery_BAT1`
+
+  native-path:          BAT1
+  vendor:               ASUS
+  model:                A32-K55
+  power supply:         yes
+  updated:              Mon 11 Nov 2024 01:37:03 PM WIB (20 seconds ago)
+  has history:          yes
+  has statistics:       yes
+  battery
+    present:             yes
+    rechargeable:        yes
+    state:               pending-charge
+    warning-level:       none
+    energy:              47.952 Wh
+    energy-empty:        0 Wh
+    energy-full:         60.1168 Wh
+    energy-full-design:  63.0411 Wh
+    energy-rate:         0 W
+    voltage:             12.446 V
+    charge-cycles:       N/A
+    percentage:          79%
+    capacity:            95.3612%
+    technology:          lithium-ion
+    icon-name:          'battery-full-charging-symbolic'
+```
+
+mungkin begitu saja, untuk detailnya kita bisa pelajari sendiri.
+terima kasihhh. :D
+
+[^link1]: [Link: _Battery capacity dropped from 97% to 30%. Is it ubuntus problem?_](https://askubuntu.com/a/724193) - askubuntu.com
+
