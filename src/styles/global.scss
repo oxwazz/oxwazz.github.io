@@ -50,7 +50,7 @@
 		}
 
 		& body {
-			@apply flex min-h-screen min-w-full max-w-3xl flex-col items-center bg-bgColor px-8 pt-4 font-sans text-sm font-normal text-textColor antialiased;
+			@apply flex min-w-full max-w-3xl flex-col items-center bg-bgColor px-8 pt-4 font-sans text-sm font-normal text-textColor antialiased;
 		}
 	}
 }
