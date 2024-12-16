@@ -1,6 +1,4 @@
-**[oxwazz.com](https://oxwazz.com)**
-
-my personal website
+**[oxwazz.com](https://oxwazz.com)** - my personal website
 
 <br>
 
